@@ -6,6 +6,7 @@
     <title>TODO List | JigneshKoshti</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
 </head>
 <body>
   <div class="main_div">
@@ -15,17 +16,23 @@
           <input type="text" placeholder="Add your Item">
           <button><i class="fas fa-plus"></i></button>
         </div>
+        
         <ul class="todoList">
-          <!-- data are comes from local storage -->
+          <input type="checkbox">
         </ul>
+        <button class="delete-button">Delete</button>
         <div class="footer">
           <span>You have<span class="pendingItem"></span>pending Item</span>
           <button>Clear All</button>
+          <!-- <button>Delete</button> -->
         </div>
+
     </div>
   </div>
 
   <script src="index.js"></script>
+
+
 
 </body>
 </html>

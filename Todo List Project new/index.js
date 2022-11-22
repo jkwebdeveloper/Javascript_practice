@@ -4,6 +4,7 @@ const todoList = document.querySelector(".todoList");
 const deleteAllBtn = document.querySelector(".footer button");
 
 
+
 inputBox.onkeyup = ()=>{
   let userEnteredValue = inputBox.value; 
   if(userEnteredValue.trim() != 0){ 
@@ -29,6 +30,13 @@ addBtn.onclick = ()=>{
   addBtn.classList.remove("active"); 
 }
 
+function handleStatus(e) {
+  const checkbox = e.querySelector("input"); //getting checkbox
+  checkbox.checked = checkbox.checked ? false : true;
+  e.classList.toggle("pending");
+  allTasks();
+  
+  }
 function showTasks(){
   let getLocalStorageData = localStorage.getItem("New Todo");
   if(getLocalStorageData == null){
@@ -43,13 +51,16 @@ function showTasks(){
   }else{
     deleteAllBtn.classList.remove("active"); 
   }
+
   let newLiTag = "";
   listArray.forEach((element, index) => {
-    newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span></li>`;
+    newLiTag += `<li>${element}<span class="icon" onclick="deleteTask(${index})"><i class="fas fa-trash"></i></span>
+    <input type="checkbox" /></li>`;
   });
   todoList.innerHTML = newLiTag; 
   inputBox.value = ""; 
 }
+
 
 function deleteTask(index){
   let getLocalStorageData = localStorage.getItem("New Todo");
@@ -58,7 +69,6 @@ function deleteTask(index){
   localStorage.setItem("New Todo", JSON.stringify(listArray));
   showTasks();
 }
-
 
 deleteAllBtn.onclick = ()=>{
   listArray = [];
