@@ -14,6 +14,9 @@ loginBtn.onclick = (() => {
 });
 
 signupLink.onclick = (() => {
-	signupBtn.click();
+	signupBtn.click();	
 	return false
 });
+
+
+	

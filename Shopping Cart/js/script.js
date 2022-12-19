@@ -9,7 +9,7 @@ const decreaseNumber = (incdec, itemprice) => {
 
 	console.log(itemprice.innerHTML);
 	if (itemval.value <= 0) {
-		itemval.value = 0;
+		itemval.value = 0;	
 		alert('Negative quantity not allowed');
 	}else{
 		itemval.value = parseInt(itemval.value) - 1;
@@ -48,3 +48,21 @@ const discount_code = () =>{
 		error_trw.innerHTML = "Try Again! valid is code jignesh"
 	}
 }
+
+<div>
+        <h3>TODO</h3>
+        <TodoList items={this.state.items} />
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="new-todo">
+            What needs to be done?
+          </label>
+          <input
+            id="new-todo"
+            onChange={this.handleChange}
+            value={this.state.text}
+          />
+          <button>
+            Add #{this.state.items.length + 1}
+          </button>
+        </form>
+</div>
