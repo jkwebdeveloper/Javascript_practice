@@ -36,7 +36,7 @@ dataPicker.addEventListener('change',function(){
     var year = day*365;
 
 
-
+    
     // Now Start the calculation
 
     var years = Math.round(miliSeconds/year);
@@ -55,4 +55,3 @@ dataPicker.addEventListener('change',function(){
 
     document.querySelector('.age-calc').classList.add('expand');
 })
-

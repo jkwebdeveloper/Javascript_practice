@@ -18,6 +18,7 @@ showTasks();
 
 addBtn.onclick = ()=>{ 
   let userEnteredValue = inputBox.value;
+  console.log("userEnteredValue",userEnteredValue)
   let getLocalStorageData = localStorage.getItem("New Todo");
   if(getLocalStorageData == null){ 
     listArray = []; 
@@ -31,10 +32,14 @@ addBtn.onclick = ()=>{
 }
 
 function handleStatus(e) {
-  const checkbox = e.querySelector("input"); //getting checkbox
+  const checkbox = document.querySelectorAll("input") //getting checkbox
   checkbox.checked = checkbox.checked ? false : true;
+  console.log(checkbox.checked);
   e.classList.toggle("pending");
-  allTasks();
+
+
+  console.log("e",e)
+  // allTasks();
   
   }
 function showTasks(){
@@ -59,8 +64,20 @@ function showTasks(){
   });
   todoList.innerHTML = newLiTag; 
   inputBox.value = ""; 
+
+}
+// const dtn = document.getElementById("dtn")
+// console.log(dtn)
+function hello () {
+  console.log("hello")
 }
 
+// dtn.onclick = () => {
+//   console.log(dtn);
+// }
+// dtn.addEventListener('click', (e) => {
+//   console.log(click);
+// })
 
 function deleteTask(index){
   let getLocalStorageData = localStorage.getItem("New Todo");
